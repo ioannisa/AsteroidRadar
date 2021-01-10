@@ -38,7 +38,7 @@ data class DatabasePictureOfDay(
  */
 fun NetworkPictureOfDay.asDatabaseModel(): DatabasePictureOfDay{
     return  DatabasePictureOfDay(
-        id = 0L,
+        id = 0L,                        // OnConflictStrategy.REPLACE -> always overwrite as the ID is the same
         mediaType = this.mediaType,
         title = this.title,
         url = this.url
