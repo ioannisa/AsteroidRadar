@@ -26,7 +26,7 @@ class MainFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
         // Setup Recycler View
         val adapter = AsteroidAdapter(AsteroidAdapter.AsteroidClickListener { asteroid ->
-            viewModel.onSleepNightClicked(asteroid)
+            viewModel.onAsteroidItemClicked(asteroid)
         })
         binding.asteroidRecycler.adapter = adapter
 

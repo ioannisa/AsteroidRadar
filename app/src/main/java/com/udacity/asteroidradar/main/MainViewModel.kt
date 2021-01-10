@@ -34,7 +34,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     // Depending on the period to fetch, ask the Repository to fetch the period items from the DB
     val asteroidsList =
-        Transformations.switchMap(daysIncluded) { days ->
+        Transformations.map(daysIncluded) { days ->
             days?.let {
                 when (days) {
                     PeriodDays.ONE   -> asteroidsRepository.asteroidsListToday
@@ -54,7 +54,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val navigateToAsteroidDetail
         get() = _navigateToAsteroidDetail
 
-    fun onSleepNightClicked(asteroid: Asteroid) {
+    fun onAsteroidItemClicked(asteroid: Asteroid) {
         _navigateToAsteroidDetail.value = asteroid
     }
 

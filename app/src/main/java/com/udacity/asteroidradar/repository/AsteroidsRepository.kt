@@ -51,7 +51,7 @@ class AsteroidsRepository(private val database: AsteroidsDatabase) {
                 // Get an ArrayList<NetworkAsteroids> from the JSONObject
                 val arrayListOfNetworkAsteroids = parseAsteroidsJsonResult(jsonObject)
 
-                // set at the asteroidsList dataclass the the ArrayList<NetworkAsteroids> received
+                // set at the asteroidsList dataclass the ArrayList<NetworkAsteroids> received
                 val asteroidsList = NetworkAsteroidContainer(arrayListOfNetworkAsteroids)
 
                 // push the fetched results to the database
